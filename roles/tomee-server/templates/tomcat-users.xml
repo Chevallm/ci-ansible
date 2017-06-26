@@ -3,7 +3,8 @@
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://tomcat.apache.org/xml tomcat-users.xsd"
               version="1.0">
-    <role rolename="manager-gui"/>
     <role rolename="manager-script"/>
+    <!-- Not necessary, used to access the GUI. We use it because it's more convenient -->
+    <role rolename="manager-gui"/>
     <user username="tomee" password="nbvcxw" roles="manager-script,manager-gui"/>
 </tomcat-users>
