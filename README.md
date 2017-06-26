@@ -16,7 +16,7 @@ Fonctionnalités et choses à savoir :
     Mais cela aurait rajouté un peu de complexité (ne pas oublier de renseigner toutes les variables), cela n'est pas essentiel au TP
 * Il vous faudra donc modifier certaines valeurs en dur pour que cela fonctionne :
   * Dans _tomee-server/templates/tomcat-users.xml_ pour le projet Ansible
-  * Dans le _pom.xml_ de l'appli Java EE à déployers
+  * Dans le _pom.xml_ de l'appli Java EE à déployer
 
 # Membres du groupe
 Projet effectué par :
