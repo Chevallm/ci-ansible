@@ -14,7 +14,7 @@ Création d'un serveur Jenkins dans un container LXC avec Ansible (autre contain
   * La configuration de l'utilisateur pour le manager de TomEE aurait pu être faite depuis une variable dans _vars/main.yml_
   * Certaines valeurs auraient pu être renseignées pour le projet Java EE dans le _pom.xml_ via des propriétés ou encore des variables d'environnement.
     Mais cela aurait rajouté un peu de complexité (ne pas oublier de renseigner toutes les variables), cela n'est pas essentiel au TP
-* Il vous faudra donc modifier certaines valeurs en dur pour que cela fonctionne :
+* Il vous faudra donc modifier certaines valeurs pour que cela fonctionne :
   * Dans _tomee-server/templates/tomcat-users.xml_ pour le projet Ansible
   * Dans le _pom.xml_ de l'appli Java EE à déployer
 
