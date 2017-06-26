@@ -4,7 +4,7 @@ Création d'un serveur TomEE dans un conteneur LXC avec Ansible
 # Jenkins-server
 Création d'un serveur Jenkins dans un container LXC avec Ansible (autre container)
 
-Fonctionnalités et choses à savoir :
+# Fonctionnalités et choses à savoir :
 * On suppose évidemment que deux containers LXC sont déjà créés (via le premier script par exemple)
 * Le fichier _inventory.ini_ est à modifier selon les IP des container LXC
 * _NOUVEAU_ : ajout de la configuration du manager du serveur TomEE pour permettre le déploiement continu à partir d'un build Jenkins
