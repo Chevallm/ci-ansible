@@ -21,5 +21,4 @@ Création d'un serveur Jenkins dans un container LXC avec Ansible (autre contain
 # Membres du groupe
 Projet effectué par :
 * Gabriel Fruhauf
-* Maxime Chevallier-Pichon
 * Benjamin Eguimendia
