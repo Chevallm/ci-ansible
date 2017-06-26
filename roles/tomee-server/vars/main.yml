@@ -1,0 +1,3 @@
+tomee_home: '/home/tomee'
+tomee_install_dir: '/opt/tomee'
+tomee_archive_url: 'http://repo.maven.apache.org/maven2/org/apache/tomee/apache-tomee/7.0.3/apache-tomee-7.0.3-plus.tar.gz'

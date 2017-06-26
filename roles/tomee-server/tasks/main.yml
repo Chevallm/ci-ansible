@@ -1,0 +1,58 @@
+- name: Installation jdk8
+  package: name=openjdk-8-jdk-headless state=present
+
+- name: Création de l'utilisateur tomee
+  user:
+    name: tomee
+    # Corresponds to "nbvcxw"
+    password: $1$niceSalt$axOI2amRV0SL2AOkMIycX/
+    shell: /bin/false
+    system: yes
+    home: '{{tomee_home}}'
+
+- name: Création du répertoire d'installation de tomee
+  file:
+    path: '{{tomee_install_dir}}'
+    state: directory
+    owner: tomee
+    group: root
+
+- name: Installation de TomEE (extraction de l'archive)
+  unarchive:
+    src: '{{tomee_archive_url}}'
+    copy: no
+    dest: '{{tomee_install_dir}}'
+
+- name: Copie du fichier de service TomEE
+  template:
+    src: roles/tomee-server/templates/tomee.service
+    dest: /etc/systemd/system/tomee.service
+    owner: tomee
+    group: root
+
+- name: Copie du fichier de configuration pour le déploiement
+  template:
+    src: roles/tomee-server/templates/tomcat-users.xml
+    dest: /opt/tomee/apache-tomee-plus-7.0.3/conf
+    owner: tomee
+    group: root
+
+- name: Copie du fichier permettant d'accéder à la GUI du host-manager depuis une autre IP que le localhost
+  template:
+    src: roles/tomee-server/templates/context.xml
+    dest: /opt/tomee/apache-tomee-plus-7.0.3/webapps/host-manager/META-INF
+    owner: tomee
+    group: root
+
+- name: Copie du fichier permettant d'accéder à la GUI du manager depuis une autre IP que le localhost
+  template:
+    src: roles/tomee-server/templates/context.xml
+    dest: /opt/tomee/apache-tomee-plus-7.0.3/webapps/manager/META-INF
+    owner: tomee
+    group: root
+ 
+- name: Activation du service TomEE
+  service:
+    name: tomee
+    state: started
+    enabled: yes
